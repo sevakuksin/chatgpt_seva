@@ -20,7 +20,8 @@ from collections import defaultdict
 user_token_usage = defaultdict(lambda: {"input": 0, "output": 0})
 
 # Load .env variables
-load_dotenv()
+load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '.env'))
+
 openai_token = os.getenv("OPENAI_API_KEY")
 telegram_token = os.getenv("TELEGRAM_BOT_TOKEN")
 AUTH_PASSWORD = os.getenv("AUTH_PASSWORD")
